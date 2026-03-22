@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About — Johan T. Gilchrist</title>
+    <meta name="description" content="About Dr. Johan Gilchrist — NSF Postdoctoral Fellow at the University of Oregon specializing in Geophysics">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .fade-in { opacity: 0; transform: translateY(16px); transition: opacity 0.5s, transform 0.5s; }
+        .fade-in.visible { opacity: 1; transform: none; }
+
+        /* Timeline styles for Education & Work */
+        .timeline { position: relative; padding-left: 1.5rem; }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--border);
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+            padding-left: 1.5rem;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -1.6rem;
+            top: 0.5rem;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--accent);
+            border: 2px solid var(--bg-dark);
+        }
+        .timeline-date {
+            font-size: 0.8rem;
+            color: var(--accent);
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            margin-bottom: 0.2rem;
+        }
+        .timeline-title {
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.2rem;
+        }
+        .timeline-sub {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="nav">
+        <div class="nav__inner">
+            <a href="index.html" class="nav__logo">Johan T. Gilchrist</a>
+            <button class="nav__toggle" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav__links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="outreach.html">Outreach</a></li>
+                <li><a href="adventures.html">Adventures</a></li>
+                <li><a href="cv.html">CV</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+
+        <!-- ===================== PAGE HEADER =================== -->
+        <section class="section" style="padding-bottom: 2rem;">
+            <div class="container">
+                <span class="section-label">Get to know me</span>
+                <h1 style="margin-bottom:0.5rem;">Who am I &amp; what inspires me?</h1>
+            </div>
+        </section>
+
+
+        <!-- ===================== INSPIRATION QUOTE ============= -->
+        <section class="section-alt" style="padding: 3rem 0;">
+            <div class="container" style="max-width: 750px;">
+                <blockquote>
+                    <p>"We are the <strong>first generation</strong> to feel the effect of climate change
+                    and the <strong>last generation</strong> who can do something about it."</p>
+                    <cite>— Barack Obama, 2014</cite>
+                </blockquote>
+            </div>
+        </section>
+
+
+        <!-- ===================== PERSONAL STORY ================ -->
+        <section class="section">
+            <div class="container">
+
+                <!-- Section 1: Who I am -->
+                <div class="content-grid" style="margin-bottom: 4rem;">
+                    <div>
+                        <span class="section-label">Background</span>
+                        <h2>The mountains and the city</h2>
+                        <p>
+                            I have a general interest in all things earth science and
+                            fluid mechanics. In addition to volcanoes, my research areas include glaciers, 
+                            landslides, wildfires and planetary science. My passion for earth science 
+                            stems from my love of the outdoors — I'm an avid snowboarder, mountain biker, 
+                            rock climber, and amateur mountaineer.
+                        </p>
+                        <p>
+                            My love for the mountains began as a kid wandering the Berkshire mountains
+                            in western Massachusetts, where I spent my summers with my parents.
+                            When I headed off to university, I began wandering and falling in love with
+                            the beautiful mountain ranges of the Pacific Northwest. However, my upbringing
+                            in the concrete jungles of Northeast New Jersey has never left me — so when
+                            I can't escape to the mountains, I enjoy exploring the diverse cultures of
+                            the city, concerts, basketball, indoor rock climbing, frisbee golf, 
+                            cooking, and hanging out with friends and colleagues after a long day of work.
+                        </p>
+                    </div>
+                    <div>
+                        <img src="assets/adventures/Yoshi_MTB_WarnerPass_Chilcotin_20210824_123925.jpg"
+                             alt="Johan mountain biking"
+                             style="border-radius:10px;"
+                             onerror="this.style.background='var(--bg-card)'; this.style.height='300px'; this.style.display='block';">
+                    </div>
+                </div>
+
+                <!-- Section 2: What inspires me -->
+                <div class="content-grid reverse" style="margin-bottom: 4rem;">
+                    <div>
+                        <img src="assets/about/ValentinColinYoshi_Saba.jpg"
+                             alt="Johan in the field at a volcano"
+                             style="border-radius:10px;"
+                             onerror="this.style.background='var(--bg-card)'; this.style.height='300px'; this.style.display='block';">
+                    </div>
+                    <div>
+                        <span class="section-label">Motivation</span>
+                        <h2>Why earth science?</h2>
+                        <p>
+                            While these varied interests keep my mind and body stimulated, the constant
+                            threat of natural disasters and their response to climate change keeps
+                            me focused on a career in the Earth sciences. During high school in
+                            Montclair, NJ (Go Mounties!), I realized that climate change would be the
+                            defining challenge for my generation and those to follow.
+                        </p>
+                        <p>
+                            During my undergraduate studies at the University of British Columbia,
+                            Vancouver, BC, I became fascinated by the fluid Earth and the catastrophic
+                            releases of potential energy governed by fluid dynamics. I switched from
+                            Political Science to Geophysics during my undergraduate degree to learn more
+                            about natural disasters, the global climate system, and the fundamentals
+                            of geophysical fluid dynamics.
+                        </p>
+                        <p>
+                            My undergraduate and PhD research work introduced me to the volcano-climate 
+                            puzzle piece. Over geologic time, volcanoes build and modulate our atmosphere. 
+                            On shorter time scales rare catastrophic eruptions can induce rapid climate 
+                            shifts, whereas the cumulative effects of small eruptions can influence climate 
+                            over decades. Consequently, I'm motivated to understand how eruption styles of 
+                            all sizes influence the responses of Earth's surface, oceans and atmosphere to 
+                            climate change. Beyond volcanology, I have extensive experience working on and 
+                            monitoring glaciers and unstable mountain slopes where I have witnessed rapid 
+                            responses of these icy and rocky masses to climate change and new weather extremes. 
+                            These observations motivate me to leverage my geophysical fluid dynamics knowledge 
+                            to study the response of glaciers and landslides to climate change. 
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Section 3: Current work -->
+                <div class="content-grid">
+                    <div>
+                        <span class="section-label">Today</span>
+                        <h2>Life in Eugene, Oregon</h2>
+                        <p>
+                            After thoroughly enjoying life and work in Vancouver, BC, I now live in
+                            Eugene, OR, where I work at the University of Oregon researching natural
+                            disasters. Much of my first summer was spent planning life around an intense
+                            wildfire season and talking with locals about the devastating effects on
+                            their homes, businesses, and health.
+                        </p>
+                        <p>
+                            Forecasting wildfire plume evolution and transport in the atmosphere is
+                            challenging, but I hope to use my volcanic plume knowledge to improve our
+                            understanding of wildfire plume physics.
+                        </p>
+                        <p style="font-style:italic; color: var(--text-secondary);">
+                            So what inspires me? The natural world and all the hard-working people
+                            living in it. We are conducting the greatest Earth Science experiment ever
+                            with anthropogenic climate change and the consequences will be devastating.
+                            However, it is also a chance to observe unprecedented events with
+                            cutting-edge technology, gain a better understanding of coupled surface-
+                            ocean-atmosphere processes, and improve our ability to prepare communities
+                            for the rapidly changing climate.
+                        </p>
+                    </div>
+                    <!-- 🔧 TO DO: Replace with a Eugene / Oregon photo -->
+                    <div>
+                        <img src="assets/about/Yoshi_SouthSisterSummit_Aug2025.jpg"
+                             alt="Oregon landscape"
+                             style="border-radius:10px;"
+                             onerror="this.style.background='var(--bg-card)'; this.style.height='300px'; this.style.display='block';">
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- ===================== EDUCATION & WORK ============== -->
+        <section class="section section-alt">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-label">Background</span>
+                    <h2>Education &amp; Experience</h2>
+                </div>
+
+                <!-- Two-column timeline layout -->
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem;">
+
+                    <!-- Education -->
+                    <div>
+                        <h3 style="margin-bottom: 1.5rem; color: var(--accent);">Education</h3>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-date">2015 – 2021</div>
+                                <div class="timeline-title">Ph.D. Geophysics</div>
+                                <div class="timeline-sub">University of British Columbia, Vancouver, BC, Canada</div>
+                                <div class="timeline-sub" style="margin-top:0.3rem; font-style:italic;">
+                                    W. H. Matthews Graduate Award ·
+                                    Nominated for Governor General's Gold Medal (Canada)
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-date">2015 – 2017</div>
+                                <div class="timeline-title">M.Sc. Geophysics</div>
+                                <div class="timeline-sub">University of British Columbia, Vancouver, BC, Canada</div>
+                                <div class="timeline-sub" style="margin-top:0.3rem; font-style:italic;">
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-date">2008 – 2014</div>
+                                <div class="timeline-title">B.Sc. Geophysics</div>
+                                <div class="timeline-sub">University of British Columbia, Vancouver, BC, Canada</div>
+                                <div class="timeline-sub" style="margin-top:0.3rem; font-style:italic;">
+                                    APEGBC Undergraduate Achievement Award in Geophysics
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Work Experience -->
+                    <div>
+                        <h3 style="margin-bottom: 1.5rem; color: var(--accent);">Work Experience</h3>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <div class="timeline-date">Apr 2024 – Present</div>
+                                <div class="timeline-title">NSF EAR Postdoctoral Fellow</div>
+                                <div class="timeline-sub">Dept. Earth Sciences, University of Oregon</div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-date">Aug 2022 – Mar 2024</div>
+                                <div class="timeline-title">Glaciologist</div>
+                                <div class="timeline-sub">Newcrest Mining Ltd.</div>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-date">Jun–Sep 2014 &amp; Jun–Aug 2019</div>
+                                <div class="timeline-title">Research Scientist</div>
+                                <div class="timeline-sub">ERM Canada</div>
+                            </div>
+                            <!-- 🔧 TO DO: Add any additional positions from your full CV -->
+                        </div>
+                    </div>
+
+                </div>
+
+                <div style="text-align:center; margin-top: 3rem;">
+                    <a href="cv.html" class="btn btn-outline">View Full CV →</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>© 2026 Johan T. Gilchrist · University of Oregon ·
+            <a href="mailto:jgilchr2@uoregon.edu">jgilchr2@uoregon.edu</a>
+        </p>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

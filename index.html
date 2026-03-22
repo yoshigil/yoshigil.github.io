@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<!-- DOCTYPE tells the browser this is a modern HTML5 document -->
+<html lang="en">
+
+<head>
+    <!-- The <head> is invisible to visitors — it contains metadata,
+         font imports, and links to your CSS stylesheet. -->
+    <meta charset="UTF-8">
+    <!-- charset=UTF-8 means the page can display any character
+         (accents, special symbols, etc.) correctly. -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- This line is ESSENTIAL for mobile devices. Without it,
+         phones would display a tiny zoomed-out desktop version. -->
+
+    <title>Johan T. Gilchrist | Geophysicist | University of Oregon</title>
+    <!-- This appears in the browser tab and in Google search results. -->
+
+    <meta name="description" content="Personal website of Dr. Johan T. Gilchrist, NSF EAR Postdoctoral Fellow at the University of Oregon. Research in volcanology, landslides, glaciers, wildfires and planetary science.">
+    <!-- This description appears under your name in Google search results. -->
+
+    <!-- Google Fonts — loads two typefaces from the web.
+         Inter is clean and modern for body text.
+         Merriweather is a readable serif for headings. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+
+    <!-- Your stylesheet — the href path is relative to this HTML file.
+         assets/css/style.css means: go into the assets folder,
+         then css folder, then load style.css. -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Fade-in animation style (small enough to keep inline here) -->
+    <style>
+        .fade-in { opacity: 0; transform: translateY(16px); transition: opacity 0.5s, transform 0.5s; }
+        .fade-in.visible { opacity: 1; transform: none; }
+    </style>
+</head>
+
+<body>
+
+    <!-- ===================== NAVIGATION ===================== -->
+    <!-- <nav> is a semantic HTML tag — it tells browsers and
+         screen readers "this is the site navigation". -->
+    <nav class="nav">
+        <div class="nav__inner">
+            <!-- The logo links back to the home page -->
+            <a href="index.html" class="nav__logo">Johan T. Gilchrist</a>
+
+            <!-- Hamburger button (only visible on mobile) -->
+            <button class="nav__toggle" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+
+            <!-- <ul> = unordered list, <li> = list item -->
+            <ul class="nav__links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="outreach.html">Outreach</a></li>
+                <li><a href="adventures.html">Adventures</a></li>
+                <li><a href="cv.html">CV</a></li>
+            </ul>
+        </div>
+    </nav>
+    <!-- ====================================================== -->
+
+
+    <!-- ===================== HERO SECTION =================== -->
+    <!-- <main> wraps the primary content of the page — good
+         for accessibility and SEO. -->
+    <main>
+        <section class="hero">
+            <div class="hero__inner">
+
+                <!-- LEFT COLUMN: Text -->
+                <div class="hero__text">
+                    <span class="label">NSF EAR Postdoctoral Fellow</span>
+
+                    <h1>Dr. Johan<br>Gilchrist</h1>
+
+                    <p class="subtitle">University of Oregon · Dept. Earth Sciences</p>
+                    <p class="subtitle" style="color: var(--text-muted); font-size:0.9rem;">(he/him/his) · Yoshi</p>
+
+                    <p class="bio">
+                        I use field, laboratory, remote-sensing and numerical methods to understand
+                        volcanic eruptions, landslides, glaciers, and wildfires.
+                        My expertise is in multiphase turbulent flow and explosive eruption
+                        dynamics, with growing interests in landslides,
+                        wildfire plumes, and methane river flows on Titan.
+                    </p>
+
+                    <!-- Academic profile links -->
+                    <div class="profile-links">
+                        <a href="https://scholar.google.com/citations?user=lfhHC2cAAAAJ&hl=en&oi=ao" class="profile-link" target="_blank">
+                            🎓 Google Scholar
+                        </a>
+                        <a href="https://orcid.org/0000-0001-9499-6942" class="profile-link" target="_blank">
+                            🆔 ORCID
+                        </a>
+                        <a href="https://www.researchgate.net/profile/Johan-Gilchrist?ev=hdr_xprf" class="profile-link" target="_blank">
+                            🔬 ResearchGate
+                        </a>
+                        <a href="mailto:jgilchr2@uoregon.edu" class="profile-link">
+                            ✉️ Email
+                        </a>
+                    </div>
+
+                    <div class="hero__cta">
+                        <a href="research.html" class="btn btn-primary">View My Research</a>
+                        <a href="cv.html" class="btn btn-outline">Curriculum Vitae</a>
+                    </div>
+                </div>
+
+                <!-- RIGHT COLUMN: Photo -->
+                <!-- 🔧 TO DO: Replace the src with your actual photo filename. -->
+                <div class="hero__image">
+                    <img src="assets/index/Lean_Headshot_UO_Aug2024_sml.jpg"
+                         alt="Dr. Johan T. Gilchrist"
+                         onerror="this.style.display='none'">
+                    <!-- onerror hides the image if the file isn't found yet,
+                         so the page still looks clean during development. -->
+                </div>
+
+            </div>
+        </section>
+        <!-- ====================================================== -->
+
+
+        <!-- ===================== NAVIGATION CARDS ============== -->
+        <!-- This section gives visitors a clear "where to go next"
+             prompt — one of the key improvements from the review. -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-label">Explore</span>
+                    <h2>What would you like to know?</h2>
+                </div>
+
+                <!-- card-grid uses CSS Grid to auto-arrange cards in columns.
+                     Each <a> tag is both a link AND the card itself. -->
+                <div class="card-grid">
+                    <a href="about.html" class="card">
+                        <div class="card__icon">🧑‍🔬</div>
+                        <div class="card__title">About Me</div>
+                        <p class="card__desc">Who I am, what inspires me, and my journey from New Jersey to the mountains of the Pacific Northwest.</p>
+                    </a>
+
+                    <a href="research.html" class="card">
+                        <div class="card__icon">🌋</div>
+                        <div class="card__title">Research</div>
+                        <p class="card__desc">Volcanoes, landslides, glaciers, wildfires and planetary science — my publications, methods, and current projects.</p>
+                    </a>
+
+                    <a href="outreach.html" class="card">
+                        <div class="card__icon">🌍</div>
+                        <div class="card__title">Outreach</div>
+                        <p class="card__desc">Climate advocacy, museum education, and communicating science to the public.</p>
+                    </a>
+
+                    <a href="adventures.html" class="card">
+                        <div class="card__icon">🏔️</div>
+                        <div class="card__title">Adventures</div>
+                        <p class="card__desc">Mountain biking, snowboarding, climbing, and life beyond the lab.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <!-- ====================================================== -->
+
+
+        <!-- ===================== RESEARCH HIGHLIGHT ============= -->
+        <section class="section section-alt">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-label">Recent Work</span>
+                    <h2>Research Highlight</h2>
+                </div>
+
+                <div class="highlight-box">
+                    <div>
+                        <h3 style="margin-bottom: 0.5rem;">Submarine Caldera Eruptions &amp; Terraced Deposits</h3>
+                        <p style="color:var(--text-secondary); font-size:0.9rem; margin-bottom:0.8rem;">
+                            <em>Nature Geoscience</em> · May 2023 · Vol. 16 No. 5
+                        </p>
+                        <p>
+                            Our research explores how terraced slopes of submarine caldera volcanoes,
+                            such as Santorini, Greece, can be used to estimate elusive eruption source
+                            conditions. Fountain physics causes caldera-forming eruption columns to
+                            collapse periodically as doughnut-shaped sedimentation waves, generating
+                            tsunamis, surfing hot rock avalanches, and submarine pyroclastic density
+                            currents — helping explain why large eruptions like Hunga Tonga (Jan 2022)
+                            can have surprisingly little climate impact.
+                        </p>
+                        <div style="display:flex; gap:1rem; flex-wrap:wrap; margin-top:1rem;">
+                            <!-- 🔧 TO DO: Replace # with the actual DOI link -->
+                            <a href="https://doi.org/10.1038/s41561-023-01160-z" class="pub-badge doi" target="_blank">DOI →</a>
+                            <a href="https://www.cbc.ca/radio/quirks/quirks-and-quarks-april-22-2023-1.6817336"
+                               class="pub-badge" target="_blank">🎙️ CBC Quirks &amp; Quarks</a>
+                        </div>
+                    </div>
+                    <!-- 🔧 TO DO: Replace with your Nature Geoscience cover image -->
+                    <img src="assets/index/NatureGeoscience_SedimentationWavesCover.png"
+                         alt="Nature Geoscience May 2023 cover"
+                         class="highlight-box__img"
+                         onerror="this.style.display='none'">
+                </div>
+            </div>
+        </section>
+        <!-- ====================================================== -->
+
+
+        <!-- ===================== CONTACT ======================== -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-label">Get in Touch</span>
+                    <h2>Contact</h2>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items:start;">
+                    <div class="contact-info">
+                        <p><strong>Dr. Johan T. Gilchrist</strong> (he/him/his)</p>
+                        <p>NSF EAR Postdoctoral Fellow</p>
+                        <p>Dept. Earth Sciences</p>
+                        <p>University of Oregon</p>
+                        <p>Volcanology 206</p>
+                        <p>1255 E 13th Avenue</p>
+                        <p>Eugene, OR 97403</p>
+                        <p style="margin-top:1rem;">
+                            <a href="mailto:jgilchr2@uoregon.edu">jgilchr2@uoregon.edu</a>
+                        </p>
+                        <div class="profile-links" style="margin-top:1.2rem;">
+                            <a href="https://scholar.google.com/citations?user=lfhHC2cAAAAJ&hl=en&oi=ao" class="profile-link" target="_blank">
+                            🎓 Google Scholar
+                            </a>
+                            <a href="https://orcid.org/0000-0001-9499-6942" class="profile-link" target="_blank">
+                                🆔 ORCID
+                            </a>
+                            <a href="https://www.researchgate.net/profile/Johan-Gilchrist?ev=hdr_xprf" class="profile-link" target="_blank">
+                                🔬 ResearchGate
+                            </a>
+                            <a href="mailto:jgilchr2@uoregon.edu" class="profile-link">
+                                ✉️ Email
+                            </a>
+                        </div>
+                    </div>
+
+                    <div>
+                        <img src="assets/index/Yoshi_AGU2019.png"
+                             alt="Johan presenting at AGU 2019 Fall Meeting"
+                             style="border-radius:10px;"
+                             onerror="this.style.display='none'">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ====================================================== -->
+
+    </main>
+
+
+    <!-- ===================== FOOTER ========================= -->
+    <footer class="footer">
+        <p>© 2026 Johan T. Gilchrist · University of Oregon ·
+            <a href="mailto:jgilchr2@uoregon.edu">jgilchr2@uoregon.edu</a>
+        </p>
+    </footer>
+    <!-- ====================================================== -->
+
+
+    <!-- JavaScript is loaded at the BOTTOM of the body.
+         This is intentional — the HTML loads first so visitors
+         see content immediately, then JS enhances it. -->
+    <script src="assets/js/main.js"></script>
+
+</body>
+</html>

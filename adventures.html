@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adventures — Johan T. Gilchrist</title>
+    <meta name="description" content="Adventures of Dr. Johan T. Gilchrist: mountain biking, snowboarding, rock climbing, and mountaineering.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .fade-in { opacity: 0; transform: translateY(16px); transition: opacity 0.5s, transform 0.5s; }
+        .fade-in.visible { opacity: 1; transform: none; }
+
+        /* Adventure entry — each trip is a self-contained section */
+        .adventure {
+            margin-bottom: 5rem;
+        }
+
+        .adventure__header {
+            margin-bottom: 2rem;
+        }
+
+        .adventure__header h2 {
+            margin-bottom: 0.3rem;
+        }
+
+        .adventure__date {
+            font-size: 0.85rem;
+            color: var(--accent);
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        /* Masonry-style photo grid: 2 columns, variable row heights */
+        .photo-grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .photo-grid-2 figure {
+            margin: 0;
+        }
+
+        .photo-grid-2 img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+
+        .photo-grid-2 figcaption {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: 0.4rem;
+            line-height: 1.5;
+        }
+
+        /* Wide photo spans both columns */
+        .photo-grid-2 .wide {
+            grid-column: 1 / -1;
+        }
+
+        .photo-grid-2 .wide img {
+            height: 340px;
+        }
+
+        @media (max-width: 768px) {
+            .photo-grid-2 { grid-template-columns: 1fr; }
+            .photo-grid-2 .wide { grid-column: 1; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="nav">
+        <div class="nav__inner">
+            <a href="index.html" class="nav__logo">Johan T. Gilchrist</a>
+            <button class="nav__toggle" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav__links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="outreach.html">Outreach</a></li>
+                <li><a href="adventures.html">Adventures</a></li>
+                <li><a href="cv.html">CV</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+
+        <!-- ===================== PAGE HEADER =================== -->
+        <section class="section" style="padding-bottom:2rem;">
+            <div class="container">
+                <span class="section-label">Life Outside the Lab</span>
+                <h1 style="margin-bottom:0.5rem;">Adventures</h1>
+                <p style="max-width:600px; color:var(--text-secondary);">
+                    Snowboarding, mountain biking, rock climbing, mountaineering — the mountains
+                    keep me grounded (and occasionally airborne).
+                </p>
+            </div>
+        </section>
+
+
+        <section class="section">
+            <div class="container">
+
+                <div class="adventure">
+                    <div class="adventure__header">
+                        <div class="adventure__date">Summer 2025 · Oregon</div>
+                        <h2>Summiting South Sister Volcano near Bend, OR</h2>
+                        <p style="color:var(--text-secondary);">
+                            Manar and I hiking to the summit of South Sister Volcano. We summitted via the 
+                            popular Southern route followed by a fun glissade down the Eastern route snowfields. 
+                            We set up camp at the beautiful Green Lakes and enjoyed a refreshing swim. One of the 
+                            most stunning landscapes I've ventured through.
+                        </p>
+                    </div>
+
+                    <div class="photo-grid-2">
+                        <figure>
+                            <img src="assets/adventures/Manar_Yoshi_SouthSisterSummit.JPG" alt="Caption">
+                            <figcaption>Mandatory summit selfie with Manar.</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="assets/adventures/ManarSouthSisterApproach.JPG" alt="Caption">
+                            <figcaption>Manar on approach to South Sister.</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="assets/adventures/Yoshi_Manar_GlissadeSouthSister.JPG" alt="Caption">
+                            <figcaption>The most efficient and fun way, besides skiing, to descend a mountin- glissading.</figcaption>
+                        </figure>
+                    </div>
+                </div>
+
+                <div class="adventure">
+                    <div class="adventure__header">
+                        <div class="adventure__date">Summer 2022 · British Columbia</div>
+                        <h2>The Goat Sport Climb Route in Marble Canyon, BC</h2>
+                        <p style="color:var(--text-secondary);">
+                            A 19-pitch 5.9 sport (bolted) climbing route with a 5.11 variant pitch in the middle. 
+                            A 12-hour car-to-car journey with my partner Manar in 35° Celsius heat with insufficient water. 
+                            Classic example of type 2 fun.
+                        </p>
+                    </div>
+
+                    <div class="photo-grid-2">
+                        <figure>
+                            <img src="assets/adventures/ManarLookDown_TheGoat.jpeg" alt="Caption">
+                            <figcaption>Manar ready to belay me up a pitch halfway through the route .</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="assets/adventures/Yoshi_TheGoat.jpg" alt="Caption">
+                            <figcaption>Mandatory mid-route selfie.</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="assets/adventures/MarbleCanyon_TheGoat.jpg" alt="Caption">
+                            <figcaption>Day-dreaming of the post-climb mandatory lake float.</figcaption>
+                        </figure>
+                    </div>
+                </div>
+
+                <div class="adventure">
+                    <div class="adventure__header">
+                        <div class="adventure__date">Summer 2021 · British Columbia, Canada</div>
+                        <h2>Mountain Biking the South Chilcotin Range, BC — 5 Days</h2>
+                        <p style="color:var(--text-secondary);">
+                            A five-day bikepacking trip deep into the South Chilcotin Mountains —
+                            accessible only by float plane. Big mountains, bigger descents, and
+                            the best of times with friends.
+                        </p>
+                    </div>
+
+                    <div class="photo-grid-2">
+                        <figure>
+                            <img src="assets/adventures/Yoshi_FloatPlaneLoading_Chilcotin_20210824_074345.jpg"
+                                 alt="Loading the float plane with bikes at Warner Lake"
+                                 onerror="this.style.background='var(--bg-section)';">
+                            <figcaption>Day 1: Loading the float plane with bikes, gear, and humans to start our 5-day bikepacking trip through the South Chilcotin Mountains in BC.</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="assets/adventures/TyaxFloatPlane_WarnerLake_Mist_20210824_084505.jpg"
+                                 alt="Float plane leaving on Warner Lake with morning mist"
+                                 onerror="this.style.background='var(--bg-section)';">
+                            <figcaption>Day 1: Float plane leaving us on our own at Warner Lake. The morning mist over the lake was absolutely stunning.</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="assets/adventures/Yoshi_HikeABike_WarnerPass_Chilcotin_20210824_111659.jpg"
+                                 alt="Hike-a-biking up to Warner Pass"
+                                 onerror="this.style.background='var(--bg-section)';">
+                            <figcaption>Day 1: Hike-a-biking the second-to-last slope to Warner Pass. Little did we know this would be a walk in the park compared to Day 3.</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="assets/adventures/PhilLavoie_MTB_PowellPass_Chilcotin_20210826_145223.jpg"
+                                 alt="Cyclist at Powell Pass"
+                                 onerror="this.style.background='var(--bg-section)';">
+                            <figcaption>Day 3: The veteran and indefatigable Phil enjoying the view and patiently waiting for the rest of us near Powell Pass on Day 3.</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="assets/adventures/PhilLavoie_MTB_PowellPass_Chilcotin_20210826_145223.jpg"
+                                 alt="Cyclists at Elbow Pass"
+                                 onerror="this.style.background='var(--bg-section)';">
+                            <figcaption>Day 4: Approaching Elbow Pass after another long yet welcomed bikeable climb after spending most of Day 3's climbs hike-a-biking.</figcaption>
+                        </figure>
+                    </div>
+                </div>
+
+                <div class="adventure">
+                    <div class="adventure__header">
+                        <div class="adventure__date">Spring 2021 · British Columbia</div>
+                        <h2>Summiting Wedge mountain and snowboarding the Northwest Couloir</h2>
+                        <p style="color:var(--text-secondary);">
+                            Ski mountaineering with my buddy Zach to summit Wedge mountain just North of Whistler, BC.
+                            An exhausting approach and shivering cold night was the price to pay for an unforgettable  
+                            summit push in hot sun followed by a ride down one of the steepest and longest couloirs of 
+                            my life. A bucket list item ticked off the list.
+                        </p>
+                    </div>
+
+                    <div class="photo-grid-2">
+                        <figure>
+                            <img src="assets/adventures/Yoshi_WedgeRidge.jpg" alt="Caption">
+                            <figcaption>Walking a knife-edge ridge on approach to the summit pyramid.</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="assets/adventures/Yoshi_WedgeSummit_20210412_140416.jpg" alt="Caption">
+                            <figcaption>Enjoying the warm weather and views on the summit.</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="assets/adventures/Wedge_NWCouloir.jpg" alt="Caption">
+                            <figcaption>Admiring the size and steepness of the NW couloir.</figcaption>
+                        </figure>
+                    </div>
+                </div>
+                
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>© 2026 Johan T. Gilchrist · University of Oregon ·
+            <a href="mailto:jgilchr2@uoregon.edu">jgilchr2@uoregon.edu</a>
+        </p>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

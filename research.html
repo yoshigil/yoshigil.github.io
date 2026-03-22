@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research — Johan T. Gilchrist</title>
+    <meta name="description" content="Research of Dr. Johan Gilchrist: explosive eruption dynamics, volcanic plumes, landslides, glaciers, wildfires, and planetary science.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .fade-in { opacity: 0; transform: translateY(16px); transition: opacity 0.5s, transform 0.5s; }
+        .fade-in.visible { opacity: 1; transform: none; }
+
+        /* Research image trio */
+        .research-trio {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.2rem;
+            margin: 2rem 0;
+        }
+        .research-trio figure {
+            margin: 0;
+        }
+        .research-trio img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+        .research-trio figcaption {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            margin-top: 0.5rem;
+            line-height: 1.5;
+            text-align: center;
+        }
+
+        /* Topic tags */
+        .tag {
+            display: inline-block;
+            padding: 0.2rem 0.6rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            margin: 0.2rem;
+        }
+
+        /* Upgoer box */
+        .upgoer-box {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 2rem;
+            font-style: italic;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            position: relative;
+        }
+        .upgoer-box::before {
+            content: '"';
+            font-size: 4rem;
+            color: var(--accent);
+            opacity: 0.3;
+            position: absolute;
+            top: -0.5rem;
+            left: 1rem;
+            font-family: Georgia, serif;
+            line-height: 1;
+        }
+
+        @media (max-width: 768px) {
+            .research-trio { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="nav">
+        <div class="nav__inner">
+            <a href="index.html" class="nav__logo">Johan T. Gilchrist</a>
+            <button class="nav__toggle" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav__links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="research.html">Research</a></li>
+                <li><a href="outreach.html">Outreach</a></li>
+                <li><a href="adventures.html">Adventures</a></li>
+                <li><a href="cv.html">CV</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+
+        <!-- ===================== PAGE HEADER =================== -->
+        <section class="section" style="background: linear-gradient(180deg, #181828 0%, var(--bg-dark) 100%); padding-bottom:2rem;">
+            <div class="container">
+                <span class="section-label">Science</span>
+                <h1 style="max-width: 700px; margin-bottom:1rem;">
+                    Investigating explosive eruption dynamics with field, laboratory, and numerical methods
+                </h1>
+                <p style="max-width:650px; color:var(--text-secondary);">
+                    Through the lense of geophysics and fluid mechanics, my research spans volcanology, glaciology, landslide, and wildfire
+                    plume physics — united by the tools of geophysics and fluid mechanics.
+                </p>
+
+                <!-- Academic profile links -->
+                <div class="profile-links" style="margin-top:1.5rem;">
+                    <!-- 🔧 TO DO: Add your real Google Scholar and ORCID URLs -->
+                    <a href="https://scholar.google.com/citations?user=lfhHC2cAAAAJ&hl=en&oi=ao" class="profile-link" target="_blank">🎓 Google Scholar</a>
+                    <a href="https://orcid.org/0000-0001-9499-6942" class="profile-link" target="_blank">🆔 ORCID</a>
+                    <a href="https://www.researchgate.net/profile/Johan-Gilchrist?ev=hdr_xprf" class="profile-link" target="_blank">🔬 ResearchGate</a>
+                </div>
+
+                <!-- Research topics tags -->
+                <div style="margin-top:1.5rem;">
+                    <span class="tag">Volcanic Plumes</span>
+                    <span class="tag">Explosive Eruptions</span>
+                    <span class="tag">Multiphase Flow</span>
+                    <span class="tag">Pyroclastic Density Currents</span>
+                    <span class="tag">Glaciology</span>
+                    <span class="tag">Landslides</span>
+                    <span class="tag">Wildfire Plumes</span>
+                    <span class="tag">Titan</span>
+                    <span class="tag">Fluid Dynamics</span>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ===================== RESEARCH METHODS ============== -->
+        <section class="section section-alt">
+            <div class="container">
+                <span class="section-label">Approach</span>
+                <h2 style="margin-bottom:0.5rem;">Three windows into eruption dynamics</h2>
+                <p style="color:var(--text-secondary); margin-bottom:1.5rem;">
+                    I combine complementary methods to build a complete picture of eruption column dynamics.
+                </p>
+
+                <!-- Three method images -->
+                <div class="research-trio">
+                    <figure>
+                        <!-- 🔧 TO DO: Replace with your Sabancaya field photo -->
+                        <img src="assets/research/DopplerRadarSaba.jpg" alt="Doppler radar at Sabancaya volcano, Peru"
+                             onerror="this.style.background='var(--bg-section)';">
+                        <figcaption><strong>Fig. 1:</strong> Doppler radar measuring the mass and vertical speed of an ash plume at Sabancaya volcano, Peru (J. Gilchrist, F. Donnadieu)</figcaption>
+                    </figure>
+                    <figure>
+                        <!-- 🔧 TO DO: Replace with your saltwater lab experiment photo -->
+                        <img src="assets/research/Exp49_FineParticlePlume.jpg" alt="Analog experiment on particle-water jet"
+                             onerror="this.style.background='var(--bg-section)';">
+                        <figcaption><strong>Fig. 2:</strong> Analog experiment on a saltwater jet with silica powder modeling an explosive eruption ash column (J. Gilchrist)</figcaption>
+                    </figure>
+                    <figure>
+                        <!-- 🔧 TO DO: Replace with your CFD simulation image -->
+                        <img src="assets/research/Exp49_MFIX_Breard_2020.png" alt="Numerical simulation of particle-water jet experiment"
+                             onerror="this.style.background='var(--bg-section)';">
+                        <figcaption><strong>Fig. 3:</strong> Computer simulation of analog experiment showing inner jet and spreading cloud (F. Breard)</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ===================== PLAIN-LANGUAGE SUMMARY ======== -->
+        <section class="section">
+            <div class="container" style="max-width: 800px;">
+                <span class="section-label">#UpGoerFive Challenge</span>
+                <h2 style="margin-bottom: 0.5rem;">My research explained with the 10,000 most common words</h2>
+                <p style="color:var(--text-secondary); margin-bottom: 1.5rem;">
+                    The <a href="https://splasho.com/upgoer5/" target="_blank">#UPGOERFIVE challenge</a>
+                    asks scientists to explain their work using only the 10,000 most common English words.
+                    Here's mine:
+                </p>
+                <div class="upgoer-box">
+                    <p style="padding-left:1.5rem; font-style:italic;">
+                        <strong>Hot stuff!</strong><br><br>
+                        In a safe space at school, I study how hot and heavy groups of air, water, and
+                        rocks (stuff) come out of the ground really fast, play with each other, and eats
+                        cold air to try and fly into lighter air way above the ground. If the hot stuff
+                        doesn't have many rocks, moves fast, and eats a lot of cold air, it will go up
+                        and stay up where it can change the air around the world and break flying buses
+                        of people. If the hot stuff has a lot of rocks, moves slow, and does not eat a
+                        lot of cold air, it will go up and come down where it can run people over on the
+                        ground. What do you need to know? Stay away from hot stuff coming out of the
+                        ground really fast!
+                    </p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ===================== PUBLICATIONS ================== -->
+        <!-- This is the key missing section from the original site! -->
+        <section class="section section-alt">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-label">Peer-Reviewed Work</span>
+                    <h2>Publications</h2>
+                    <p>
+                        <!-- 🔧 TO DO: Add your Google Scholar URL -->
+                        Full list also available on
+                        <a href="#" target="_blank">Google Scholar</a> and
+                        <a href="#" target="_blank">ORCID</a>.
+                    </p>
+                </div>
+
+                <ul class="pub-list">
+
+                    <!-- PUBLICATION FORMAT:
+                         Each .pub-item is one paper. Fill in:
+                         - pub-item__title  → paper title
+                         - pub-item__authors → all authors (bold your name)
+                         - pub-item__journal → journal name, year, volume, pages
+                         - DOI link         → https://doi.org/10.XXXX/...
+                    -->
+
+                    <li class="pub-item">
+                        <div class="pub-item__title">
+                            Terraced submarine caldera slopes record eruption dynamics at Santorini
+                        </div>
+                        <div class="pub-item__authors">
+                            <strong>Gilchrist, J.T.</strong>, Jellinek, A.M., Auker, M., &amp; Sparks, R.S.J.
+                        </div>
+                        <div class="pub-item__journal">
+                            Nature Geoscience · 2023 · Vol. 16, pp. 391–397
+                        </div>
+                        <div class="pub-item__links">
+                            <!-- 🔧 TO DO: Replace # with actual DOI -->
+                            <a href="#" class="pub-badge doi" target="_blank">DOI</a>
+                            <a href="https://www.cbc.ca/radio/quirks/quirks-and-quarks-april-22-2023-1.6817336"
+                               class="pub-badge" target="_blank">🎙️ CBC Radio</a>
+                        </div>
+                    </li>
+
+                    <!-- 🔧 TO DO: Add your remaining publications below using this same format.
+                         Copy the <li class="pub-item">...</li> block for each new paper. -->
+
+                    <li class="pub-item">
+                        <div class="pub-item__title">
+                            <!-- 🔧 Add paper title -->
+                        </div>
+                        <div class="pub-item__authors">
+                            <!-- 🔧 Add authors -->
+                        </div>
+                        <div class="pub-item__journal">
+                            <!-- 🔧 Add journal, year, volume -->
+                        </div>
+                        <div class="pub-item__links">
+                            <a href="#" class="pub-badge doi" target="_blank">DOI</a>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+        </section>
+
+
+        <!-- ===================== MEDIA COVERAGE ================ -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="section-label">In the News</span>
+                    <h2>Media &amp; Public Communication</h2>
+                </div>
+
+                <div class="card-grid">
+                    <a href="https://www.cbc.ca/radio/quirks/quirks-and-quarks-april-22-2023-1.6817336"
+                       class="card" target="_blank">
+                        <div class="card__icon">🎙️</div>
+                        <div class="card__title">CBC Radio — Quirks &amp; Quarks</div>
+                        <p class="card__desc">Interview with Bob Macdonald about submarine caldera eruptions and the Hunga Tonga event. April 2023.</p>
+                    </a>
+
+                    <a href="https://www.youtube.com/watch?v=0NJ-sbFg1IA" class="card" target="_blank">
+                        <div class="card__icon">🎬</div>
+                        <div class="card__title">UBC EOAS — Brock Lecture Video</div>
+                        <p class="card__desc">Study of explosive eruption column dynamics.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>© 2026 Johan T. Gilchrist · University of Oregon ·
+            <a href="mailto:jgilchr2@uoregon.edu">jgilchr2@uoregon.edu</a>
+        </p>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
