@@ -1,0 +1,12 @@
+# Mac system files — created automatically by macOS, not needed
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+
+# Microsoft Office temp files (start with ~$)
+~$*
+
+# Raw research figures folder — not part of the website
+Figures/
