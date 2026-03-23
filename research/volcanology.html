@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volcanology — Johan T. Gilchrist</title>
+    <meta name="description" content="Johan Gilchrist's research on explosive eruption dynamics, volcanic plumes, and pyroclastic density currents.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <style>
+        .fade-in { opacity: 0; transform: translateY(16px); transition: opacity 0.5s, transform 0.5s; }
+        .fade-in.visible { opacity: 1; transform: none; }
+
+        .tag {
+            display: inline-block;
+            padding: 0.2rem 0.6rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            margin: 0.2rem;
+        }
+        .breadcrumb {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+        .breadcrumb a { color: var(--accent); text-decoration: none; }
+        .breadcrumb a:hover { text-decoration: underline; }
+
+        .research-trio {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.2rem;
+            margin: 2rem 0;
+        }
+        .research-trio figure { margin: 0; }
+        .research-trio img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+        }
+        .research-trio figcaption {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            margin-top: 0.5rem;
+            line-height: 1.5;
+            text-align: center;
+        }
+        .key-questions {
+            list-style: none;
+            padding: 0;
+            margin: 1.5rem 0;
+        }
+        .key-questions li {
+            padding: 0.9rem 1rem 0.9rem 3rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            margin-bottom: 0.75rem;
+            position: relative;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        .key-questions li::before {
+            content: '?';
+            position: absolute;
+            left: 1rem;
+            font-weight: 700;
+            color: var(--accent);
+            font-size: 1.1rem;
+        }
+        @media (max-width: 768px) {
+            .research-trio { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="nav">
+        <div class="nav__inner">
+            <a href="../index.html" class="nav__logo">Johan T. Gilchrist</a>
+            <button class="nav__toggle" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav__links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../about.html">About</a></li>
+                <li><a href="../research.html">Research</a></li>
+                <li><a href="../outreach.html">Outreach</a></li>
+                <li><a href="../adventures.html">Adventures</a></li>
+                <li><a href="../cv.html">CV</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+
+        <!-- ===================== PAGE HEADER =================== -->
+        <section class="section" style="background: linear-gradient(180deg, #181828 0%, var(--bg-dark) 100%); padding-bottom:2rem;">
+            <div class="container">
+                <div class="breadcrumb">
+                    <a href="../research.html">← Research</a> / Volcanology
+                </div>
+                <span class="section-label">Research Topic</span>
+                <h1 style="max-width: 700px; margin-bottom:1rem;">Volcanology</h1>
+                <p style="max-width:650px; color:var(--text-secondary);">
+                    <!-- 🔧 TO DO: Write a 2–3 sentence overview of your volcanology research -->
+                    Explosive volcanic eruptions inject hot mixtures of ash, gas, lithics and pumices
+                    that can rise as volcanic plumes and spread as umbrella ash clouds in the atmosphere or 
+                    collapse into deadly pyroclastic density currents. Small eruptions create ashfall and pyroclastic
+                    density current hazards to local communities and aircraft at tens of volcanoes every day 
+                    across the globe. Less frequent but deadlier large eruptions, such as Mt. St. Helens 1980 
+                    and Pinatubo 1991, form eruption columns where erupted mass can be delivered to umbrella 
+                    ash clouds and pyroclastic density currents simultaneously. Large eruptions can disrupt 
+                    global society if they occur near key global trading routes and ports, or if they cause
+                    abrupt cooling by delivering teragrams of sulfur gases to the stratosphere. My research 
+                    uses field and remote-sensing observations, analog experiments, and numerical simulations 
+                    to understand the multiphase turbulent fluid dynamics governing how mass is transported 
+                    to the atmosphere, ground and oceans during eruptions of all sizes. Ultimately, my goal is 
+                    to establish a new eruption classification that can predict distinct eruption hazards and 
+                    their evolution during an eruption. 
+                </p>
+                <div style="margin-top:1.2rem;">
+                    <span class="tag">Volcanic Plumes</span>
+                    <span class="tag">Explosive Eruptions</span>
+                    <span class="tag">Pyroclastic Density Currents</span>
+                    <span class="tag">Multiphase Flow</span>
+                    <span class="tag">Doppler Radar</span>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ===================== KEY QUESTIONS ================= -->
+        <section class="section section-alt">
+            <div class="container" style="max-width:800px;">
+                <span class="section-label">Motivation</span>
+                <h2 style="margin-bottom:1rem;">Key research questions</h2>
+                <ul class="key-questions">
+                    <!-- 🔧 TO DO: Replace these with your own research questions -->
+                    <li>What particle-fluid scale processes govern the partitioning of mass in eruption columns between ash clouds and 
+                        pyroclastic density currents during an eruption?</li>
+                    <li>How do fluctuations in mass flux at the vent influence the gravitational stability of eruption columns and the 
+                        rise height of volcanic plumes?</li>
+                    <li>How does the particle size distribution erupted from the vent influence the dynamics of column collapse?</li>
+                    
+                    <!-- Add more <li> items as needed -->
+                </ul>
+            </div>
+        </section>
+
+
+        <!-- ===================== FIGURES / METHODS ============= -->
+        <section class="section">
+            <div class="container">
+                <span class="section-label">Approach</span>
+                <h2 style="margin-bottom:0.5rem;">Methods &amp; data</h2>
+                <p style="color:var(--text-secondary); margin-bottom:1.5rem;">
+                    <!-- 🔧 TO DO: Briefly describe your approach for this topic -->
+                    I combine remote-sensing of eruptions, scaled laboratory experiments, and
+                    computational fluid dynamics simulations to test theoretical models of eruption dynamics.
+                </p>
+
+                <!-- 🔧 TO DO: Replace images and captions below with your own.
+                     You can use 1, 2, or 3 figures — just remove <figure> blocks you don't need.
+                     Images should be saved to assets/research/ -->
+                <div class="research-trio">
+                    <figure>
+                        <img src="../assets/research/DopplerRadarSaba.jpg"
+                             alt="Doppler radar at Sabancaya volcano"
+                             onerror="this.style.background='var(--bg-section)';">
+                        <figcaption><strong>Fig. 1:</strong> Doppler radar measuring ash plume velocity at Sabancaya volcano, Peru (F. Donnadieu)</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="../assets/research/Exp49_FineParticlePlume.jpg"
+                             alt="Analog experiment on particle-water jet"
+                             onerror="this.style.background='var(--bg-section)';">
+                        <figcaption><strong>Fig. 2:</strong> Laboratory analog experiment: saltwater jet with silica powder simulating an eruption column (J. Gilchrist)</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="../assets/research/Exp49_MFIX_Breard_2020.png"
+                             alt="Numerical simulation of eruption column"
+                             onerror="this.style.background='var(--bg-section)';">
+                        <figcaption><strong>Fig. 3:</strong> Numerical simulation showing inner jet column and spreading particle cloud (E. Breard)</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ===================== PUBLICATIONS ================== -->
+        <section class="section section-alt">
+            <div class="container">
+                <span class="section-label">Peer-Reviewed Work</span>
+                <h2 style="margin-bottom:1.5rem;">Related publications</h2>
+                <ul class="pub-list">
+
+                    <!-- 🔧 TO DO: Copy relevant publication entries from research.html -->
+                    <li class="pub-item">
+                        <div class="pub-item__title">
+                            Submarine terraced deposits linked to periodic collapse of caldera-forming eruption columns
+                        </div>
+                        <div class="pub-item__authors">
+                            <strong>Gilchrist, J.T.</strong>, Jellinek, A.M., Hooft, E. E. E. &amp; Wanket, S.
+                        </div>
+                        <div class="pub-item__journal">
+                            Nature Geoscience · 2023 · Vol. 16, pp. 391–397
+                        </div>
+                        <div class="pub-item__links">
+                            <a href="https://doi.org/10.1038/s41561-023-01160-z" class="pub-badge doi" target="_blank">DOI</a>
+                            <a href="https://www.cbc.ca/radio/quirks/quirks-and-quarks-april-22-2023-1.6817336"
+                               class="pub-badge" target="_blank">🎙️ CBC Radio</a>
+                        </div>
+                    </li>
+
+                    <!-- 🔧 TO DO: Add more volcanology publications here -->
+
+                    <li class="pub-item">
+                        <div class="pub-item__title">
+                            Sediment waves and the gravitational stability of volcanic jets
+                        </div>
+                        <div class="pub-item__authors">
+                            <strong>Gilchrist, J.T.</strong>, &amp; Jellinek, A.M.
+                        </div>
+                        <div class="pub-item__journal">
+                            Bulletin of Volcanology · 2021 · Vol. 83, Art. 64
+                        </div>
+                        <div class="pub-item__links">
+                            <a href="https://doi.org/10.1007/s00445-021-01472-1" class="pub-badge doi" target="_blank">DOI</a>
+                        </div>
+                    </li>
+
+                    <li class="pub-item">
+                        <div class="pub-item__title">
+                            Are eruptions from linear fissures and caldera ring dykes more likely to produce pyroclastic flows?
+                        </div>
+                        <div class="pub-item__authors">
+                            Jessop, D. E., <strong>Gilchrist, J.T.</strong>, Jellinek, A.M. &amp; Roche, O.
+                        </div>
+                        <div class="pub-item__journal">
+                            Earth and Planetary Science Letters · 2016 · Vol. 454, pp. 142-153
+                        </div>
+                        <div class="pub-item__links">
+                            <a href="https://doi.org/10.1016/j.epsl.2016.09.005" class="pub-badge doi" target="_blank">DOI</a>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>© 2026 Johan T. Gilchrist · University of Oregon ·
+            <a href="mailto:jgilchr2@uoregon.edu">jgilchr2@uoregon.edu</a>
+        </p>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+</body>
+</html>
