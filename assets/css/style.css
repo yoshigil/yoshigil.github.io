@@ -89,6 +89,10 @@ img {
     border-radius: 6px;
 }
 
+figcaption {
+    font-size: 0.9rem;
+}
+
 /* --- 4. LAYOUT UTILITIES ---
    .container limits content width and centers it. */
 .container {
