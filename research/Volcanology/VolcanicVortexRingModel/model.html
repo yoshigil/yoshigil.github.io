@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volcanic Vortex Ring Rise Model — Johan T. Gilchrist</title>
+    <meta name="description" content="Interactive 1D vortex-ring/thermal rise model for natural volcanic vortex rings, running entirely in your browser.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../../assets/css/style.css">
+    <style>
+        .fade-in { opacity: 0; transform: translateY(16px); transition: opacity 0.5s, transform 0.5s; }
+        .fade-in.visible { opacity: 1; transform: none; }
+
+        .tag {
+            display: inline-block;
+            padding: 0.2rem 0.6rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            margin: 0.2rem;
+        }
+        .breadcrumb {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+        }
+        .breadcrumb a { color: var(--accent); text-decoration: none; }
+        .breadcrumb a:hover { text-decoration: underline; }
+
+        .app-frame-wrap {
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+            background: #faf8f5;
+        }
+        .app-frame-wrap iframe {
+            display: block;
+            width: 100%;
+            height: 1600px;
+            border: none;
+        }
+        .app-toolbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-bottom: 0.75rem;
+        }
+        .app-note {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+        .btn-link {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: border-color 0.2s;
+        }
+        .btn-link:hover { border-color: var(--accent); }
+
+        .source-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-top: 1.25rem;
+        }
+        .source-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.1rem 1.2rem;
+        }
+        .source-card h3 {
+            font-size: 1rem;
+            margin-bottom: 0.4rem;
+        }
+        .source-card p {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.8rem;
+            line-height: 1.5;
+        }
+        .source-card a {
+            font-size: 0.82rem;
+            color: var(--accent);
+            text-decoration: none;
+        }
+        .source-card a:hover { text-decoration: underline; }
+
+        @media (max-width: 768px) {
+            .source-grid { grid-template-columns: 1fr; }
+            .app-frame-wrap iframe { height: 2200px; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="nav">
+        <div class="nav__inner">
+            <a href="../../../index.html" class="nav__logo">Johan T. Gilchrist</a>
+            <button class="nav__toggle" aria-label="Toggle navigation">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav__links">
+                <li><a href="../../../index.html">Home</a></li>
+                <li><a href="../../../about.html">About</a></li>
+                <li><a href="../../../research.html">Research</a></li>
+                <li><a href="../../../outreach.html">Outreach</a></li>
+                <li><a href="../../../adventures.html">Adventures</a></li>
+                <li><a href="../../../cv.html">CV</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+
+        <!-- ===================== PAGE HEADER =================== -->
+        <section class="section" style="background: linear-gradient(180deg, #181828 0%, var(--bg-dark) 100%); padding-bottom:2rem;">
+            <div class="container">
+                <div class="breadcrumb">
+                    <a href="../../../research.html">Research</a> /
+                    <a href="../volcanology.html">Volcanology</a> /
+                    Volcanic Vortex Ring Model
+                </div>
+                <span class="section-label">Interactive Model</span>
+                <h1 style="max-width: 700px; margin-bottom:1rem;">Volcanic Vortex Ring Rise Model</h1>
+                <p style="max-width:700px; color:var(--text-secondary);">
+                    A 1D variable-entrainment vortex-ring / thermal rise model for natural volcanic
+                    vortex rings, adapted for rise through a real, stratified atmosphere. Set the
+                    vent conditions, atmosphere, and entrainment closure below and run the model —
+                    everything executes locally in your browser (via Pyodide/WebAssembly), so nothing
+                    is uploaded to a server.
+                </p>
+                <div style="margin-top:1.2rem;">
+                    <span class="tag">Vortex Rings</span>
+                    <span class="tag">Volcanic Plumes</span>
+                    <span class="tag">Entrainment</span>
+                    <span class="tag">Stratified Atmosphere</span>
+                    <span class="tag">Runs In-Browser</span>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ===================== ABOUT THE MODEL ================= -->
+        <section class="section">
+            <div class="container" style="max-width:800px;">
+                <span class="section-label">Background</span>
+                <h2 style="margin-bottom:1rem;">About the model</h2>
+                <p style="color:var(--text-secondary); line-height:1.7; margin-bottom:1rem;">
+                    Volcanic vortex rings are toroidal puffs of ash and gas that are occasionally
+                    observed emerging from vents during weak explosive eruptions. This model treats a
+                    rising vortex ring as an entraining thermal, tracking its volume, momentum, and
+                    buoyancy fluxes as it rises through a compressible, stratified atmosphere and mixes
+                    with ambient air. The atmosphere can be the built-in ICAO/US Standard Atmosphere
+                    (1976), optionally shifted to a known near-vent temperature, or a real sounding
+                    profile you upload. Entrainment can be prescribed as a constant rate or computed
+                    as a height-dependent, Richardson-number-based closure following Turner (1962).
+                </p>
+                <p style="color:var(--text-secondary); line-height:1.7;">
+                    The physics follows the classic thermal/plume framework of Morton, Taylor &amp;
+                    Turner (1956) and Turner (1962), adapted for volcanic vortex rings per Sparks et
+                    al. (1997), with buoyancy computed from potential temperature so the model remains
+                    valid for the compressible atmosphere the ring rises through. The in-browser
+                    version uses the same model physics as the standalone Python/MATLAB versions, and
+                    was validated against the desktop Python implementation to four decimal places.
+                </p>
+            </div>
+        </section>
+
+
+        <!-- ===================== INTERACTIVE APP ================= -->
+        <section class="section section-alt">
+            <div class="container">
+                <span class="section-label">Try It</span>
+                <h2 style="margin-bottom:0.75rem;">Run the model</h2>
+                <div class="app-toolbar">
+                    <p class="app-note">
+                        First load takes a few seconds while your browser downloads Pyodide + numpy.
+                        Results appear instantly on every run after that.
+                    </p>
+                    <a href="web/index.html" target="_blank" rel="noopener" class="btn-link">Open full-page ↗</a>
+                </div>
+                <div class="app-frame-wrap">
+                    <iframe src="web/index.html" title="Volcanic Vortex Ring Rise Model" loading="lazy"></iframe>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ===================== SOURCE CODE ================= -->
+        <section class="section">
+            <div class="container">
+                <span class="section-label">Source Code</span>
+                <h2 style="margin-bottom:0.5rem;">Download &amp; run locally</h2>
+                <p style="color:var(--text-secondary); margin-bottom:0.5rem;">
+                    The browser version above is a fully self-contained port of the same model.
+                    MATLAB and desktop Python (with an optional GUI) versions are also available.
+                </p>
+                <div class="source-grid">
+                    <div class="source-card">
+                        <h3>MATLAB</h3>
+                        <p>Edit parameters at the top of a script and run — no toolboxes beyond base MATLAB required.</p>
+                        <a href="https://github.com/yoshigil/yoshigil.github.io/tree/main/research/Volcanology/VolcanicVortexRingModel/matlab" target="_blank" rel="noopener">View on GitHub ↗</a>
+                    </div>
+                    <div class="source-card">
+                        <h3>Python</h3>
+                        <p>Command-line script or a Tkinter desktop GUI. Requires numpy, scipy, and matplotlib.</p>
+                        <a href="https://github.com/yoshigil/yoshigil.github.io/tree/main/research/Volcanology/VolcanicVortexRingModel/python" target="_blank" rel="noopener">View on GitHub ↗</a>
+                    </div>
+                    <div class="source-card">
+                        <h3>Full documentation</h3>
+                        <p>Setup instructions for MATLAB, Python (Mac &amp; Windows), and troubleshooting notes.</p>
+                        <a href="https://github.com/yoshigil/yoshigil.github.io/blob/main/research/Volcanology/VolcanicVortexRingModel/README.txt" target="_blank" rel="noopener">Read README ↗</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>© 2026 Johan T. Gilchrist · University of Oregon ·
+            <a href="mailto:jgilchr2@uoregon.edu">jgilchr2@uoregon.edu</a>
+        </p>
+    </footer>
+
+    <script src="../../../assets/js/main.js"></script>
+</body>
+</html>

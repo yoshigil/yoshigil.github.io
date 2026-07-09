@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/style.css">
     <style>
         .fade-in { opacity: 0; transform: translateY(16px); transition: opacity 0.5s, transform 0.5s; }
         .fade-in.visible { opacity: 1; transform: none; }
@@ -84,17 +84,17 @@
 
     <nav class="nav">
         <div class="nav__inner">
-            <a href="../index.html" class="nav__logo">Johan T. Gilchrist</a>
+            <a href="../../index.html" class="nav__logo">Johan T. Gilchrist</a>
             <button class="nav__toggle" aria-label="Toggle navigation">
                 <span></span><span></span><span></span>
             </button>
             <ul class="nav__links">
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="../about.html">About</a></li>
-                <li><a href="../research.html">Research</a></li>
-                <li><a href="../outreach.html">Outreach</a></li>
-                <li><a href="../adventures.html">Adventures</a></li>
-                <li><a href="../cv.html">CV</a></li>
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../../about.html">About</a></li>
+                <li><a href="../../research.html">Research</a></li>
+                <li><a href="../../outreach.html">Outreach</a></li>
+                <li><a href="../../adventures.html">Adventures</a></li>
+                <li><a href="../../cv.html">CV</a></li>
             </ul>
         </div>
     </nav>
@@ -105,14 +105,14 @@
         <section class="section" style="background: linear-gradient(180deg, #181828 0%, var(--bg-dark) 100%); padding-bottom:2rem;">
             <div class="container">
                 <div class="breadcrumb">
-                    <a href="../research.html">← Research</a> / Volcanology
+                    <a href="../../research.html">← Research</a> / Volcanology
                 </div>
                 <span class="section-label">Research Topic</span>
                 <h1 style="max-width: 700px; margin-bottom:1rem;">Volcanology</h1>
                 <figure>
                         <video controls muted loop playsinline
                                style="width:100%; height:auto; display:block;">
-                            <source src="../assets/research/volcanology/FrontCam_FineCoarseParts_LG_PC_260212-02_720p_trim.mp4"
+                            <source src="../../assets/research/volcanology/FrontCam_FineCoarseParts_LG_PC_260212-02_720p_trim.mp4"
                                     type="video/mp4">
                             Your browser does not support this video format.
                         </video>
@@ -177,19 +177,19 @@
 
                 <div class="research-trio">
                     <figure>
-                        <img src="../assets/research/volcanology/DopplerRadarSaba.jpg"
+                        <img src="../../assets/research/volcanology/DopplerRadarSaba.jpg"
                              alt="Doppler radar at Sabancaya volcano"
                              onerror="this.style.background='var(--bg-section)';">
                         <figcaption><strong>Fig. 1:</strong> Doppler radar measuring ash plume velocity at Sabancaya volcano, Peru (F. Donnadieu)</figcaption>
                     </figure>
                     <figure>
-                        <img src="../assets/research/volcanology/Exp49_FineParticlePlume.jpg"
+                        <img src="../../assets/research/volcanology/Exp49_FineParticlePlume.jpg"
                              alt="Analog experiment on particle-water jet"
                              onerror="this.style.background='var(--bg-section)';">
                         <figcaption><strong>Fig. 2:</strong> Laboratory analog experiment on a water-particle jet simulating an eruption column (J. Gilchrist)</figcaption>
                     </figure>
                     <figure>
-                        <img src="../assets/research/volcanology/Exp49_MFIX_Breard_2020.png"
+                        <img src="../../assets/research/volcanology/Exp49_MFIX_Breard_2020.png"
                              alt="Numerical simulation of eruption column"
                              onerror="this.style.background='var(--bg-section)';">
                         <figcaption><strong>Fig. 3:</strong> Numerical simulation showing inner jet column and spreading particle cloud (E. Breard)</figcaption>
@@ -199,8 +199,27 @@
         </section>
 
 
-        <!-- ===================== PUBLICATIONS ================== -->
+        <!-- ===================== INTERACTIVE TOOLS ============== -->
         <section class="section section-alt">
+            <div class="container" style="max-width:800px;">
+                <span class="section-label">Interactive Tools</span>
+                <h2 style="margin-bottom:0.5rem;">Models</h2>
+                <p style="color:var(--text-secondary); margin-bottom:1.5rem;">
+                    Run my research models directly in your browser — no installation required.
+                </p>
+                <a href="VolcanicVortexRingModel/model.html" class="card" style="display:block;">
+                    <div class="card__icon">🌀</div>
+                    <div class="card__title">Volcanic Vortex Ring Rise Model</div>
+                    <p class="card__desc">A 1D variable-entrainment vortex-ring / thermal rise model for
+                        natural volcanic vortex rings rising through a real, stratified atmosphere.
+                        Try it interactively, or download the MATLAB/Python source.</p>
+                </a>
+            </div>
+        </section>
+
+
+        <!-- ===================== PUBLICATIONS ================== -->
+        <section class="section">
             <div class="container">
                 <span class="section-label">Peer-Reviewed Work</span>
                 <h2 style="margin-bottom:1.5rem;">Related publications</h2>
@@ -264,6 +283,6 @@
         </p>
     </footer>
 
-    <script src="../assets/js/main.js"></script>
+    <script src="../../assets/js/main.js"></script>
 </body>
 </html>

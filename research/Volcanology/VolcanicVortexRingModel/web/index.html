@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Volcanic Vortex Ring Rise Model</title>
+<meta name="description" content="Interactive 1D vortex ring / thermal rise model for natural volcanic vortex rings, running entirely in your browser.">
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+</head>
+<body>
+
+<header>
+  <h1>Volcanic Vortex Ring Rise Model</h1>
+  <p>
+    A 1D variable-entrainment vortex-ring / thermal rise model for natural
+    volcanic vortex rings, adapted for a real stratified atmosphere. Runs
+    entirely in your browser (via Pyodide/WebAssembly) &mdash; nothing is
+    sent to a server. Source: Johan Gilchrist.
+  </p>
+</header>
+
+<main>
+  <section id="loading-banner">Loading Python environment (Pyodide + numpy)&hellip; this only happens once per visit and usually takes a few seconds.</section>
+
+  <div id="app" class="hidden">
+
+    <!-- ================= INPUT PANEL ================= -->
+    <form id="model-form">
+
+      <div class="panel">
+        <h2>Source (vent) conditions</h2>
+        <div class="field">
+          <label for="z0_asl">Vent altitude a.s.l. [m]</label>
+          <input type="number" id="z0_asl" value="3380" step="any" required>
+        </div>
+        <div class="field">
+          <label for="r0">Vent / initial ring radius [m]</label>
+          <input type="number" id="r0" value="5" step="any" min="0.001" required>
+        </div>
+        <div class="field">
+          <label for="u0">Initial (exit) velocity [m/s]</label>
+          <input type="number" id="u0" value="20" step="any" min="0.001" required>
+        </div>
+        <div class="field">
+          <label for="Tj0_C">Initial ring temperature [&deg;C]</label>
+          <input type="number" id="Tj0_C" value="450" step="any" required>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h2>Atmosphere</h2>
+        <div class="radio-row">
+          <label><input type="radio" name="atm_mode" value="standard" checked> Standard atmosphere (ICAO/US 1976)</label>
+          <label><input type="radio" name="atm_mode" value="profile"> Load profile file&hellip;</label>
+        </div>
+
+        <div id="standard-atm-fields">
+          <div class="field">
+            <label for="Ta0_target_C">Ambient temperature at vent altitude [&deg;C]</label>
+            <input type="number" id="Ta0_target_C" value="15" step="any" required>
+          </div>
+        </div>
+
+        <div id="profile-atm-fields" class="subfields">
+          <div class="field">
+            <label for="profile-file">Profile file (CSV with height/temperature/pressure columns)</label>
+            <input type="file" id="profile-file" accept=".csv,.txt">
+            <div id="profile-file-status" class="file-status">No file selected.</div>
+          </div>
+          <div class="field">
+            <label for="profile_temp_units">Profile temperature units</label>
+            <select id="profile_temp_units">
+              <option value="K">Kelvin</option>
+              <option value="C">Celsius</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="profile_press_units">Profile pressure units</label>
+            <select id="profile_press_units">
+              <option value="Pa">Pa</option>
+              <option value="hPa">hPa</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h2>Entrainment</h2>
+        <div class="radio-row">
+          <label><input type="radio" name="entrainment_mode" value="variable" checked> Variable (height-dependent, Ri-based)</label>
+          <label><input type="radio" name="entrainment_mode" value="constant"> Constant (single value)</label>
+        </div>
+
+        <div id="variable-entrain-fields">
+          <div class="field">
+            <label for="c_coef">c coefficient (Turner 1962)</label>
+            <input type="number" id="c_coef" value="1.0" step="any" min="0.0001">
+          </div>
+          <div class="field">
+            <label for="alpha_max">alpha cap (alpha_max)</label>
+            <input type="number" id="alpha_max" value="1.0" step="any" min="0.0001">
+          </div>
+        </div>
+
+        <div id="constant-entrain-fields" class="subfields">
+          <div class="field">
+            <label for="alpha_const">Constant alpha</label>
+            <input type="number" id="alpha_const" value="0.1" step="any" min="0.0001">
+          </div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h2>Integration</h2>
+        <div class="field">
+          <label for="zmax_rise">Max height above vent to try [m]</label>
+          <input type="number" id="zmax_rise" value="3000" step="any" min="1">
+        </div>
+      </div>
+
+      <button type="submit" id="run-btn" disabled>Loading&hellip;</button>
+      <div id="run-status" class="status-line"></div>
+    </form>
+
+    <!-- ================= RESULTS PANEL ================= -->
+    <div id="results-panel">
+
+      <div class="panel">
+        <h2>Diagnostics</h2>
+        <pre id="report-text">Run the model to see results here.</pre>
+        <button type="button" id="download-csv-btn" class="secondary" disabled style="margin-top:0.75rem;">Download results (CSV)</button>
+      </div>
+
+      <div class="panel">
+        <h2>Fluxes</h2>
+        <div class="plot-row">
+          <div id="plot-V" class="plot"></div>
+          <div id="plot-M" class="plot"></div>
+          <div id="plot-B" class="plot"></div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h2>Profiles</h2>
+        <div class="plot-row">
+          <div id="plot-u" class="plot"></div>
+          <div id="plot-r" class="plot"></div>
+          <div id="plot-gprime" class="plot"></div>
+          <div id="plot-T" class="plot"></div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <h2>Entrainment &amp; Richardson number</h2>
+        <div class="plot-row">
+          <div id="plot-alpha" class="plot"></div>
+          <div id="plot-Ri" class="plot"></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</main>
+
+<footer>
+  Model and code: Johan Gilchrist. Physics: Morton, Taylor &amp; Turner (1956);
+  Turner (1962); Sparks et al. (1997), adapted for a compressible,
+  stratified atmosphere with potential-temperature-based buoyancy.
+</footer>
+
+<script src="https://cdn.jsdelivr.net/pyodide/v314.0.2/full/pyodide.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
